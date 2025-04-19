@@ -1,4 +1,4 @@
-import { Stack, Typography, Link, Box } from '@mui/material';
+import { Stack, Typography, Box } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import {
   FormPasswordField,
@@ -41,10 +41,6 @@ export function SignIn() {
     }
   };
 
-  const redirectToRegister = () => {
-    navigate('/auth/register');
-  };
-
   return (
     <Container>
       <LogoIFSC />
@@ -65,17 +61,6 @@ export function SignIn() {
                 label="Senha"
                 required
               />
-              <Stack direction="row" gap={0.5} alignItems="baseline" ml={0.5}>
-                <Typography>Não possui uma conta? Faça seu </Typography>
-                <Link
-                  type="button"
-                  component="button"
-                  onClick={redirectToRegister}
-                  underline="always"
-                >
-                  cadastro
-                </Link>
-              </Stack>
             </Stack>
 
             <Box mb={3}>
