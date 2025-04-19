@@ -1,0 +1,13 @@
+FROM node:20.13.1
+
+WORKDIR /app
+
+COPY package.json yarn.lock ./
+
+RUN yarn install
+
+COPY . .
+
+EXPOSE 50789
+
+CMD ["yarn", "dev:mock"]

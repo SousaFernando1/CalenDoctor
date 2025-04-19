@@ -1,0 +1,18 @@
+{
+  "cookies": [],
+  "origins": [
+    {
+      "origin": "http://localhost:50789",
+      "localStorage": [
+        {
+          "name": "@event_sell/token",
+          "value": "\"123abc456def\""
+        },
+        {
+          "name": "@event_sell/user",
+          "value": "{\"id\":1,\"name\":\"testeSuccess\"}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:8081"
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      DATABASE_URL: jdbc:postgresql://db:5432/calendoctor
+      DATABASE_USER: calendoctor
+      DATABASE_PASSWORD: calendoctor
+      JWT_SECRET: Sd!3$ASgAS*
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: calendoctor
+      POSTGRES_USER: calendoctor
+      POSTGRES_PASSWORD: calendoctor
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
