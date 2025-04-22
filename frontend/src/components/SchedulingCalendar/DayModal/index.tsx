@@ -62,7 +62,10 @@ export function DayModal({
                       {scheduling.description}
                     </Typography>
                     <Typography>
-                      {`${extractTimeFromDate(scheduling.startDate)} - ${scheduling.collaborator.name} | ${scheduling.patient.name}`}
+                      {`${extractTimeFromDate(scheduling.startDate)} - ${extractTimeFromDate(scheduling.endDate)}`}
+                    </Typography>
+                    <Typography>
+                      {`${scheduling.collaborator.name} | ${scheduling.patient.name}`}
                     </Typography>
                   </Box>
 
